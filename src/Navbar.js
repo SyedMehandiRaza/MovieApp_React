@@ -1,19 +1,60 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 
+const Nav = styled.div`
+   width:100%;
+   height:60;
+   background: linear-gradient(170deg, #0d47a1,#1bc059 );
+   display:flex;
+   justify-content: space-between
+`
+const Title = styled.div`
+   padding-top:9px;
+   font-size:40px ;
+   font-weight:600;
+   font-family:Montserrat , sans-serif;
+   text-transform: uppercase;
+   margin-left:20px
+`
+
+const CartContainer = styled.div`
+   position:relative;
+   cursor:pointer
+`
+
+const CartIconImg = styled.img`
+   height:48px;
+   margin-left:20px;
+   padding-top:8px;
+   padding-right:17px
+`
+
+const CartCount = styled.span`
+   background: orange;
+   border-radius: 50%;
+   padding: 4px 8px;
+   position: absolute;
+   right: 10px;
+   top: 3px;
+   font-size:12px
+`
 
 class Navbar extends Component{
  render(){
   return(
    <>
-     <div style={styles.nav}>
-        <div style={styles.title}>
+     <Nav>
+
+        <Title>
            Movie App
-        </div>
-        <div style={styles.cartContainer}>
-           <img alt="cart icon" src="https://cdn-icons-png.flaticon.com/128/891/891462.png" style={styles.cartIcon}/>
-           <span style={styles.cartCount}>3</span>
-        </div>
-     </div>
+        </Title>
+
+        <CartContainer>
+           <CartIconImg alt="cart icon" src="https://cdn-icons-png.flaticon.com/128/891/891462.png" />
+           <CartCount>3</CartCount>
+        </CartContainer>
+
+     </Nav>
    
    </>
   )
